@@ -69,12 +69,37 @@ All the spec file should be written like the standard spec file `.light-spec-rul
 
 ## Step 0 - Load Context and Dependencies
 
+### Constitution Enforcement
+- If `.light-spec-rules/constitution.md` does NOT exist:
+  - You MUST stop all execution immediately
+  - You MUST NOT proceed with any further steps
+  - You MUST ask the user to create this file before continuing
+
+- You MUST read `.light-spec-rules/constitution.md`
+- You MUST follow all rules defined in this file
+
+- If any conflict occurs between:
+  - the constitution
+  - other rules
+  - or task instructions
+
+  - You MUST:
+    - Detect and explicitly describe the conflict
+    - Present the conflicting options clearly
+    - Ask the user to decide which rule or instruction to follow
+
+  - You MUST NOT:
+    - Automatically resolve the conflict
+    - Ignore the conflict
+
+
 ### Dependency Resolution
 - Follow the **Dependency Resolution Rules**
   - Read the YAML frontmatter in file `entry spec`
   - Extract the `dependencies` field in file `entry spec`
   - Resolve all dependencies recursively in file `entry spec`
   - Ensure dependency resolution is executed only once
+
 
 ### Git Context Analysis
 
