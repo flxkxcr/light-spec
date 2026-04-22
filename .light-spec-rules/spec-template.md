@@ -67,7 +67,7 @@ dependencies: [feature-1, feature-2]            # or nothing
 
 ## Test Actions
 <!-- AI START: TEST -->
-`cmake -S . -B build -G "Ninja"`
+`cmake -S . -B build -G "Ninja Multi-Config"`
 
 `cmake --build build --config Release`
 
