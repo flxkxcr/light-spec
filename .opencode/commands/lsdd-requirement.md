@@ -22,30 +22,6 @@ User intent: $2
 6. ONLY update this file $1, DO NOT modify other files
 
 
-## Dependency Resolution Rules
-
-- Maintain a set of spec files that have been read via **dependencies traversal**:
-  - Name this set: `dependency_read_set`
-
-- When resolving dependencies:
-
-  1. If a spec file is reached via the `dependencies` field:
-     - If it is already in `dependency_read_set`:
-       - SKIP reading it again
-     - Otherwise:
-       - Read the file
-       - Add it to `dependency_read_set`
-       - Continue resolving its dependencies recursively
-
-  2. If a spec file is NOT reached via the `dependencies` field (e.g. directly provided as input or manually referenced):
-     - ALWAYS read the file
-     - This rule applies EVEN IF the file has been read before via dependencies
-
-- Summary:
-  - Deduplication applies ONLY to dependency traversal
-  - Direct reads MUST NOT be skipped
-
-
 ## Workflow
 
 ### Step 0 — Load Context and Dependencies
