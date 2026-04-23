@@ -21,10 +21,10 @@ $2
 1. Read the provided spec file: $1
 2. Understand the bug description
 3. Locate the root cause based on:
-   - # Requirement
-   - # Design
-   - # Tasks
-   - # Testing Standards
+   - `# Requirement`
+   - `# Design`
+   - `# Tasks`
+   - `# Testing Standards`
 4. Fix the issue WITHOUT violating the spec
 5. Validate the fix using **# Testing Standards**
 6. Update:
