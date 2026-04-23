@@ -43,7 +43,10 @@ User intent: $2
 ### Step 3 — Define Test Cases
 Update ONLY the content inside the AI test block under **# Testing Standards** section in spec file $1
 
-- Read **## Test Actions** section. If it is empty, you MUST read `AGENTS.md`. If `AGENTS.md` has not test actions, stop and ask user.
+- Read **## Test Actions** section.
+   - If it is empty:
+   - You MUST stop and ask user how to test.
+   - You MUST NOT infer, generate, or assume any test actions.
 
 - Define test cases under **## Test Cases** section
 Each test case MUST follow this EXACT format:
