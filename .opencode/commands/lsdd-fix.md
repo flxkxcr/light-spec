@@ -163,3 +163,10 @@ Append to **# Log** section:
   - Test2: FAIL (reason: ...)
 - Notes: <notes>
 ```
+
+
+## STRICTLY FORBIDDEN
+
+You MUST NOT:
+- Modify **# Requirement** section
+- Modify **# Design** section
