@@ -11,7 +11,9 @@ Now, your phase is `lsdd-fix`, your phase is `lsdd-fix`
 ## Input
 
 Spec file: $1
-Bug description: $ARGUMENTS
+
+Bug description:
+$2
 
 
 ## Core Objectives
