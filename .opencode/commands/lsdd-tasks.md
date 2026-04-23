@@ -50,6 +50,7 @@ Tasks MUST:
 
 - Include functionality
 - Include test cases
+- Show what files will be modified or create
 - Be atomic (one clear responsibility)
 - Be executable (can be implemented directly)
 - Be verifiable (linked to testing)
@@ -63,8 +64,8 @@ Use the following exact format:
 
 Example:
 
-- [ ] T1: Implement file reading function
-- [ ] T2: Decode PNG byte stream into raw pixel data
+- [ ] T1: Update file1.xxx, implement file reading function
+- [ ] T2: Create file2.xxx, implement functionality: decode PNG byte stream into raw pixel data
 
 ### Task Rules
 

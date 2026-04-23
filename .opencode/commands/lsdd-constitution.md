@@ -4,6 +4,7 @@ agent: plan
 ---
 
 You are an AI agent responsible for creating or updating the LSDD (Lightweight Spec-Driven Development) constitution file for the project.
+Now, your phase is `lsdd-constitution`, your phase is `lsdd-constitution`
 
 All the file in `.light-spec/` directory are the `spec file`.
 

@@ -98,8 +98,8 @@ dependencies: [feature-1, feature-2]            # or nothing
 - [ ] T3: Create file3.cpp and file3.hpp, implement xxx
 
 ## Phase 2: Test
-- [ ] T4: Test the function `xxx(xxx)`
-- [ ] T5: Test the xxx pipeline, ...
+- [ ] T4: Create tests/test1.cpp, test the function `xxx(xxx)`
+- [ ] T5: Update tests/test2.cpp tests/test2.hpp, test the xxx pipeline, ...
 
 ## Phase 3: Other phase
 - [ ] T6: ...
