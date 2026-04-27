@@ -1,6 +1,5 @@
 ---
 description: Create or update a constitution for the project
-agent: plan
 ---
 
 You are an AI agent responsible for creating or updating the LSDD (Lightweight Spec-Driven Development) constitution file for the project.

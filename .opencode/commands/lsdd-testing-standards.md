@@ -1,6 +1,5 @@
 ---
 description: Define and refine the "Testing Standards" section of an LSDD spec file
-agent: plan
 ---
 
 You are an AI agent working under the LSDD (Lightweight Spec-Driven Development) protocol.
@@ -25,10 +24,13 @@ User intent: $2
 ## Workflow
 
 ### Step 0 — Load Context and Dependencies
-- Define the current spec file `$1` as the `entry spec`
-- Read `.light-spec-rules/common.md`, you MUST follow all rules defined in this file `.light-spec-rules/common.md`
-- Rules in `.light-spec-rules/common.md` take precedence over this command
-- Execute `Step 0 - Load Context and Dependencies` in `.light-spec-rules/common.md`
+- If you already read the context and dependeicies just now
+  - DO NOT execute `Step 0` again.
+- Else:
+  - Define the current spec file `$1` as the `entry spec`
+  - Read `.light-spec-rules/common.md`, you MUST follow all rules defined in this file `.light-spec-rules/common.md`
+  - Rules in `.light-spec-rules/common.md` take precedence over this command
+  - Execute `Step 0 - Load Context and Dependencies` in `.light-spec-rules/common.md`
 
 ### Step 1 — Understand Requirement
 - Identify expected behavior

@@ -1,6 +1,5 @@
 ---
 description: Execute tasks, update task status, record testing results and logs
-agent: build
 ---
 
 You are an AI agent executing tasks under the LSDD (Lightweight Spec-Driven Development) protocol.
@@ -8,7 +7,7 @@ You are an AI agent executing tasks under the LSDD (Lightweight Spec-Driven Deve
 Now, your phase is `lsdd-execute`, your phase is `lsdd-execute`
 
 ## Input
-Spec file: $1  
+Spec file: $1
 User intent: $2
 
 
@@ -26,10 +25,13 @@ User intent: $2
 ## Workflow
 
 ### Step 0 — Load Context and Dependencies
-- Define the current spec file `$1` as the `entry spec`
-- Read `.light-spec-rules/common.md`, you MUST follow all rules defined in this file `.light-spec-rules/common.md`
-- Rules in `.light-spec-rules/common.md` take precedence over this command
-- Execute `Step 0 - Load Context and Dependencies` in `.light-spec-rules/common.md`
+- If you already read the context and dependeicies just now
+  - DO NOT execute `Step 0` again.
+- Else:
+  - Define the current spec file `$1` as the `entry spec`
+  - Read `.light-spec-rules/common.md`, you MUST follow all rules defined in this file `.light-spec-rules/common.md`
+  - Rules in `.light-spec-rules/common.md` take precedence over this command
+  - Execute `Step 0 - Load Context and Dependencies` in `.light-spec-rules/common.md`
 
 ### Step 1 — Read Tasks, Requirement, Design and Testing Standards
 - Identify all incomplete tasks ([ ])
@@ -84,7 +86,7 @@ Rules:
 - DO NOT invent results
 
 ### Step 5 — Write Log
-- Append execution summary to **# Log** section in spec file $1
+- Write execution summary to **# Log** section in spec file $1
 
 Format:
 ```markdown
@@ -96,10 +98,6 @@ Format:
   - Test2: FAIL (reason: ...)
 - Notes: <notes>
 ```
-
-Rules:
-- ONLY append
-- DO NOT modify previous logs
 
 - If ANY task fails:
   - Ask the user to choose one of the following options:
@@ -150,8 +148,6 @@ STRICTLY FORBIDDEN:
 - Deleting tasks
 - Renaming task IDs
 
-These rules apply EVEN IF the AI block (or AI task block) is removed.
-
 
 ## TESTING RESULT RULES
 
@@ -170,7 +166,10 @@ under **# Testing Standards / ## Test Cases**
 - Do NOT invent results
 
 
-## LOG RULES (APPEND-ONLY)
+## LOG RULES (RE-WRITE)
+
+You MUST re-write the log.
+DO NOT append.
 
 Modify ONLY inside:
 
@@ -180,13 +179,8 @@ Modify ONLY inside:
 
 under **# Log**
 
-### Rules:
 
-- ONLY append at the end
-- DO NOT modify previous logs
-
-
-## OUTPUT FORMAT
+## OUTPUT
 
 You MUST output the FULL updated markdown document.
 
