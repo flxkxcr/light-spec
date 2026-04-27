@@ -76,13 +76,13 @@ dependencies: [feature-1, feature-2]            # or nothing
 
 ## Test Cases
 <!-- AI START: TEST -->
-- [ ] Test1: data test example
+- [ ] TC1: data test example
   - Purpose: to validate xxx
   - Input: input xxx data
   - Expected Output: output xxx data
   - Validation: check the output data is `xxx`
 
-- [ ] Test2: UI test example
+- [ ] TC2: UI test example
   - Purpose: to validate xxx ui is correct
   - Input: launch the app, and xxx
   - Expected Output: the textarea is xxx, the button is xxx
@@ -93,16 +93,18 @@ dependencies: [feature-1, feature-2]            # or nothing
 <!-- AI START: TASK -->
 
 ## Phase 1: Core Functionality
-- [ ] T1: Update file1.hpp, implement xxx
-- [ ] T2: Update file2.ts, implement xxx
-- [ ] T3: Create file3.cpp and file3.hpp, implement xxx
+- [ ] T1: Update file1, implement `void function1(string a, int b)`
+  - Test Cases: TC1
 
-## Phase 2: Test
-- [ ] T4: Create tests/test1.cpp, test the function `xxx(xxx)`
-- [ ] T5: Update tests/test2.cpp tests/test2.hpp, test the xxx pipeline, ...
+- [ ] T2: Create file2, implement `function2(float a)`
+  - Test Cases: TC1, TC2
 
-## Phase 3: Other phase
-- [ ] T6: ...
+## Phase 2: Functionality 2
+- [ ] T3: Create file3, implement `void function3()` base on file1 `void function1(string a, int b)`
+  - Test Cases: TC1
+
+## Phase 3: Test
+- [ ] T4: Create tests/test1, test `void function1(string a, int b)` in file1
 
 <!-- AI END: TASK -->
 
@@ -111,16 +113,8 @@ dependencies: [feature-1, feature-2]            # or nothing
 ## 2026-04-22 09:46
 
 - Executed: T1, T2, ...
-- Result: partial
-  - Test1: PASS
-  - Test2: FAIL (why failed)
+- Result: pass / partial / fail
+  - TC1: pass
+  - TC2: fail (why failed)
 - Notes: xxx
-
-## 2026-04-22 09:50
-
-- Executed: re-check T1, T2, ...
-- Result: success
-  - Test1: PASS
-  - Test2: PASS
-- Notes: re-install xxx, and re-run all the tests
 <!-- AI END -->

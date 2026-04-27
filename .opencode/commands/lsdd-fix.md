@@ -2,8 +2,6 @@
 description: Fix the bug with the context in spec file.
 ---
 
-You are an AI agent executing tasks under the LSDD (Lightweight Spec-Driven Development) protocol.
-
 Now, your phase is `lsdd-fix`, your phase is `lsdd-fix`
 
 
@@ -55,16 +53,10 @@ $2
 
 - Understand the bug from `Bug description`
 
-- Determine:
-  - Which requirement is violated
-  - Which design assumption is broken
-  - Which task(s) are affected
-  - Whether existing tests cover the bug
-
 - If the bug cannot be mapped to any requirement or design:
   - STOP
   - Ask user whether:
-    1. Update spec
+    1. Update spec file $1
     2. Other (user specify)
 
 

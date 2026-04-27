@@ -7,6 +7,23 @@ All the file in `.light-spec/` directory are the `spec file`.
 All the spec file should be written like the standard spec file `.light-spec-rules/spec-template.md`
 
 
+## AI Blocks
+- `AI block` like this:
+<!-- AI START -->
+...
+<!-- AI END -->
+
+- `AI task block` like this:
+<!-- AI START: TASK -->
+...
+<!-- AI END: TASK -->
+
+- `AI test block` like this:
+<!-- AI START: TEST -->
+...
+<!-- AI END: TEST -->
+
+
 ## Dependency Resolution Rules
 
 - Maintain a set of spec files that have been read via **dependencies traversal**:

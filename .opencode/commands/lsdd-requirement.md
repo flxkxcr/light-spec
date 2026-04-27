@@ -2,8 +2,6 @@
 description: Refine and update the "Requirement" section of an LSDD spec file.
 ---
 
-You are an AI agent working under the LSDD (Lightweight Spec-Driven Development) protocol.
-
 Now, your phase is `lsdd-requirement`, your phase is `lsdd-requirement`
 
 ## Input
@@ -65,52 +63,22 @@ Update ONLY the content inside the AI block under **# Requirement** section in s
 
 ## STRICT EDITING RULES
 
-1. ONLY modify content inside the AI block under the **# Requirement** section:
-
-   <!-- AI START -->
-   ...
-   <!-- AI END -->
+1. ONLY modify content inside the AI block under the **# Requirement** section
 
 2. DO NOT modify:
-   - YAML frontmatter
-   - Other sections (Design, Tasks, etc.)
-   - Any content outside the AI block
+  - YAML frontmatter
+  - Other sections (Design, Tasks, etc.)
+  - Any content outside the AI block
 
 3. If the AI block is missing:
-   - DO NOT recreate it
-   - Ask the user whether to take control or skip
+  - DO NOT recreate it
+  - Ask the user whether to take control or skip
 
 4. DO NOT rewrite the entire document
 
 5. Modifications must be minimal:
-   - Do NOT rewrite the entire block
-   - Only refine or extend existing content
+  - Do NOT rewrite the entire block
+  - Only refine or extend existing content
 
 6. Non-functional Constraints:
-   - Do NOT use third-party libraries unless explicitly approved
-
-
-## OUTPUT FORMAT
-
-You MUST output the FULL updated markdown document.
-
-
-## STYLE RULES
-
-- Be concise (optimize for low token usage)
-- Use structured bullet points where possible
-- Avoid redundancy
-- Keep it implementation-aware (useful for next steps)
-
-
-## FAILURE CONDITIONS
-
-If you:
-- Modify content outside Requirement AI block
-- Rewrite entire document
-- Ignore existing content
-
-→ The result is INVALID
-
-
-Proceed with analyzing and refining the requirement.
+  - Do NOT use third-party libraries unless explicitly approved

@@ -2,8 +2,6 @@
 description: Execute tasks, update task status, record testing results and logs
 ---
 
-You are an AI agent executing tasks under the LSDD (Lightweight Spec-Driven Development) protocol.
-
 Now, your phase is `lsdd-execute`, your phase is `lsdd-execute`
 
 ## Input
@@ -18,7 +16,7 @@ User intent: $2
 3. Validate results using **# Testing Standards**
 4. Update:
    - Task status ([ ] → [x])
-   - **# Testing Standards / ## Test Cases** section
+   - **## Test Cases** section
    - **# Log** section
 
 
@@ -39,161 +37,52 @@ User intent: $2
 - Read **# Design** section
 - Read **# Testing Standards** section
 
-### Step 2 — Execute Tasks
-- Execute tasks sequentially (T1 → T2 → ...)
-- After each task:
-  - Validate against testing standards
+### Step 2 — Execute Tasks/Test Cases and Update Status
 
-- If a task fails:
-  - STOP execution
-  - Record failure
+- MUST follow the sequence: Tasks → Test → Mark as completed if tests passed
+- MUST execute Phase by Phase (Phase 1 → Phase 2 → ...)
 
-- If the task is a testing task:
-  - MUST directly invoke the public interface of the module under test
-  - DO NOT introduce any intermediate abstractions (e.g., wrappers, helpers, adapters) solely for testing purposes
+- For each Phase:
+  - Execute all tasks
+  - Immediately execute the corresponding Test Cases
 
-### Step 3 — Update Task Status
-Update ONLY the content inside the AI task block under **# Tasks** section in spec file $1
+  - ONLY if all Test Cases pass:
+    - MUST check all task checkboxes in this Phase (change [ ] to [x]) (Update ONLY the content inside the `AI task block` under **# Tasks** section in spec file $1)
+    - MUST check all corresponding Test Case checkboxes in this Phase (change [ ] to [x]) (Update ONLY the content inside the `AI test block` under **## Test Cases** section in spec file $1)
+    - Proceed to the next Phase
 
-- AI task block like this:
-<!-- AI START: TASK -->
-...
-<!-- AI END: TASK -->
-
-Action:
-- Mark task as [x] ONLY if validated
+  - If any Test Case fails:
+    - MUST stop execution immediately
+    - MUST report the failure and ask user and wait for user action
 
 Rules:
-- ONLY change [ ] → [x]
-- DO NOT modify task description
-- DO NOT reorder tasks
-- DO NOT delete tasks
+- ONLY change [ ] → [x] in section **## Test Cases** and section **# Tasks**
+- DO NOT modify other content in spec file $1
 
-### Step 4 — Record Testing Results
-Update ONLY the content inside the AI test block under **# Testing Standards / ## Test Cases** section in spec file $1
 
-- AI test block like this:
-<!-- AI START: TEST -->
-...
-<!-- AI END: TEST -->
-
-Action:
-- Mark test cases as [x] ONLY if passed
-
-Rules:
-- Must correspond to defined test cases
-- Must be based on actual validation
-- DO NOT invent results
-
-### Step 5 — Write Log
+### Step 3 — Write Log
 - Write execution summary to **# Log** section in spec file $1
+- Update ONLY the content inside the `AI block` under **# Log** section in spec file $1
 
-Format:
-```markdown
-## YYYY-MM-DD HH:mm
+- Format: Follow the template file `.light-spec-rules/spec-template.md`
 
-- Executed: T1, T2
-- Result: success / partial / failed
-  - Test1: PASS
-  - Test2: FAIL (reason: ...)
-- Notes: <notes>
-```
-
-- If ANY task fails:
-  - Ask the user to choose one of the following options:
-
-    1. Continue Iteration:
-       - Immediately write a log describing the failure
-       - Then proceed to the NEXT execution cycle (do `lsdd-execute` phase again)
-       - In the next cycle:
-         - Continue performing tasks
-         - Continue logging all results (including new failures)
-
-       - IMPORTANT:
-         - After this next cycle completes:
-           - If ANY task fails again:
-             - DO NOT automatically continue
-             - MUST ask the user again for the next action
-
-    2. Stop Execution:
-       - Immediately stop all ongoing and future actions
-       - Write a log describing the failure
+Rules:
+- MUST list ALL executed Test Cases
+- MUST explicitly mark the result of ALL test cases
+- If any Test Case fails, MUST provide a clear and specific failure reason, including concrete evidence (e.g., error message, assertion details, stack trace, or observed incorrect behavior)
 
 
-## GLOBAL EXECUTION RULES
+## STRICT EDITING RULES
+1. DO NOT modify:
+  - YAML frontmatter
+  - Other sections (Requirement, Design)
+  - Any content outside the AI task block
 
-1. Task execution MUST follow order (T1 → T2 → ...)
-2. Each task must be validated before marking as complete
-3. If a task fails:
-   - STOP further execution (unless explicitly instructed)
-   - Record failure
-4. NEVER assume success without validation
-5. NEVER modify the YAML frontmatter in this spec file $1
+2. If the AI task block or AI test block is missing:
+  - DO NOT recreate it
+  - Ask the user whether to take control or skip
 
+3. DO NOT rewrite the entire document
 
-## TASK STATUS UPDATE RULES (CRITICAL)
-
-You are ONLY allowed to modify checkbox state:
-- [ ] → [x]
-
-You can modify checkbox state ONLY inside the AI task block undef **# Tasks** section:
-<!-- AI START: TASK -->
-...
-<!-- AI END: TASK -->
-
-STRICTLY FORBIDDEN:
-
-- Changing task description
-- Reordering tasks
-- Deleting tasks
-- Renaming task IDs
-
-
-## TESTING RESULT RULES
-
-Modify ONLY inside:
-
-<!-- AI START: TEST -->
-...
-<!-- AI END: TEST -->
-
-under **# Testing Standards / ## Test Cases**
-
-### Rules:
-
-- Must correspond to Testing Standards
-- Must be factual (based on execution)
-- Do NOT invent results
-
-
-## LOG RULES (RE-WRITE)
-
-You MUST re-write the log.
-DO NOT append.
-
-Modify ONLY inside:
-
-<!-- AI START -->
-...
-<!-- AI END -->
-
-under **# Log**
-
-
-## OUTPUT
-
-You MUST output the FULL updated markdown document.
-
-
-## FAILURE CONDITIONS
-
-If you:
-- Modify task descriptions
-- Reorder tasks
-- Mark tasks without validation
-- Overwrite logs
-- Output partial document
-
-→ The result is INVALID
-
-Proceed with executing the tasks.
+4. If there is any content in **# Log** section, you MUST re-write it. DO NOT append.
+MUST modify ONLY inside the AI block undef **# Log** section
