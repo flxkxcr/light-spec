@@ -135,12 +135,12 @@ Supported ask lists:
 - From the ask list:
   - Classify questions into:
     1. Mandatory Constraints:
-       - Fundamental language or system-level constraints
-       - MUST be defined for correct implementation
+      - Fundamental language or system-level constraints
+      - MUST be defined for correct implementation
 
     2. Conditional Constraints:
-       - Style, preference, or non-critical constraints
-       - Only required if they affect consistency or may cause conflicts
+      - Style, preference, or non-critical constraints
+      - Only required if they affect consistency or may cause conflicts
 
 - For Mandatory Constraints:
   - If already clearly defined → DO NOT ask
@@ -199,9 +199,9 @@ All questions MUST follow:
     - MUST be classified under Design Constraints by default
     - MUST NOT create a separate section for them
     - Exception handling (reclassification rules):
-        - If a constraint directly affects testing behavior → Testing Standards Constraints
-        - If a constraint directly affects task execution or workflow → Tasks Constraints
-        - If a constraint directly affects logging or traceability → Log Constraints
+      - If a constraint directly affects testing behavior → Testing Standards Constraints
+      - If a constraint directly affects task execution or workflow → Tasks Constraints
+      - If a constraint directly affects logging or traceability → Log Constraints
 
 - You MUST:
   - Classify each rule based on its primary impact

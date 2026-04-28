@@ -15,9 +15,9 @@ User intent: $2
 2. Execute tasks from the **# Tasks** section
 3. Validate results using **# Testing Standards**
 4. Update:
-   - Task status ([ ] → [x])
-   - **## Test Cases** section
-   - **# Log** section
+  - Task status ([ ] → [x])
+  - **## Test Cases** section
+  - **# Log** section
 
 
 ## Workflow

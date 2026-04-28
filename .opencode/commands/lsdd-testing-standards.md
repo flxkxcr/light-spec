@@ -50,9 +50,9 @@ Read the **# Design** section
 Update ONLY the content inside the AI test block under **# Testing Standards** section in spec file $1
 
 - Read **## Test Actions** section.
-   - If it is empty:
-   - You MUST stop and ask user how to test.
-   - You MUST NOT infer, generate, or assume any test actions.
+  - If it is empty:
+  - You MUST stop and ask user how to test.
+  - You MUST NOT infer, generate, or assume any test actions.
 
 - Write test cases under **## Test Cases** section
 
