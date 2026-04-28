@@ -101,8 +101,11 @@ dependencies: [feature-1, feature-2]            # or nothing
 - [ ] T3: Create file3, implement `void function3()` base on file1 `void function1(string a, int b)`
   - Test Cases: TC1
 
+- [ ] T4: Update file1, implement `void function4()` base on file1 `void function1(string a, int b)`
+  - Test Cases: TC2
+
 ## Phase 3: Test
-- [ ] T4: Create tests/test1, test `void function1(string a, int b)` in file1
+- [ ] T5: Create tests/test1, test `void function1(string a, int b)` in file1
 
 <!-- AI END: TASK -->
 

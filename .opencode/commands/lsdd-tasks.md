@@ -75,8 +75,9 @@ Rules:
 
 - MUST use `Phase N - <description>` to structure tasks
   - Tasks within the same Phase MUST have no dependencies and MUST be executable in parallel
+  - Tasks that modify the same file MUST NOT be placed in the same Phase
   - Tasks with dependencies MUST be separated into different Phases
-  - Each Phase MAY depend only on previous Phases, never on tasks within the same Phase
+  - Each Phase MUST depend only on previous Phases, never on tasks within the same Phase
 
 - Each Task MUST be covered by at least one Test Case
 - During task generating:
