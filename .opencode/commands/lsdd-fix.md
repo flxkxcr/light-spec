@@ -33,13 +33,13 @@ $2
 ## Workflow
 
 ### Step 0 — Load Context and Dependencies
+- Read `.light-spec-rules/common.md`, you MUST follow all rules defined in this file `.light-spec-rules/common.md`
+- Rules in `.light-spec-rules/common.md` take precedence over this command
 
 - If you already read the context and dependeicies just now
   - DO NOT execute `Step 0` again.
 - Else:
   - Define the current spec file `$1` as the `entry spec`
-  - Read `.light-spec-rules/common.md`, you MUST follow all rules defined in this file `.light-spec-rules/common.md`
-  - Rules in `.light-spec-rules/common.md` take precedence over this command
   - Execute `Step 0 - Load Context and Dependencies` in `.light-spec-rules/common.md`
 
 
