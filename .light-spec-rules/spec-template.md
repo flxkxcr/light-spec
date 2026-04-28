@@ -1,10 +1,8 @@
 ---
 id: spec-template                               # the name equal to file name
-title: example title
-keywords: [keyword1, keyword2]
-summary: example summary
+description: example summary
 status: in_progress                             # in_progress | done
-git_commit: a1b2c3d (start), abcde1f (end)      # or nothing
+git_commit: a1b2c3d                             # or nothing
 dependencies: [feature-1, feature-2]            # or nothing
 ---
 
