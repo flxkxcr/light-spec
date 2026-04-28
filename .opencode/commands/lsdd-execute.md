@@ -2,8 +2,6 @@
 description: Execute tasks, update task status, record testing results and logs
 ---
 
-Now, your phase is `lsdd-execute`, your phase is `lsdd-execute`
-
 ## Input
 Spec file: $1
 User intent: $2
@@ -45,7 +43,7 @@ User intent: $2
 
 - For each Phase:
   - Before executing any tasks, MUST verify that no file is modified by more than one task in this Phase, and that no functional dependencies exist between tasks. If any file is modified by multiple tasks, or any dependency exists, MUST stop immediately, report the specific conflict to the user, and ask for clarification, then wait for user action.
-  
+
   - If the number of tasks in this Phase is greater than 3, MUST launch subagents to execute them in parallel.
   - If the number of tasks in this Phase is greater than 3, MUST launch subagents to execute them in parallel.
 

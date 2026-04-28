@@ -3,7 +3,6 @@ description: Create or update a constitution for the project
 ---
 
 You are an AI agent responsible for creating or updating the constitution file for the project.
-Now, your phase is `lsdd-constitution`, your phase is `lsdd-constitution`
 
 All the file in `.light-spec/` directory are the `spec file`.
 

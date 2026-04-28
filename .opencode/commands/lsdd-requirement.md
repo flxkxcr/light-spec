@@ -2,8 +2,6 @@
 description: Refine and update the "Requirement" section of an LSDD spec file.
 ---
 
-Now, your phase is `lsdd-requirement`, your phase is `lsdd-requirement`
-
 ## Input
 Spec file: $1
 User intent: $2

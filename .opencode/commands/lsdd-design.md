@@ -2,8 +2,6 @@
 description: Refine and update the "Design" section of an LSDD spec file.
 ---
 
-Now, your phase is `lsdd-design`, your phase is `lsdd-design`
-
 ## Input
 Spec file: $1
 User intent: $2

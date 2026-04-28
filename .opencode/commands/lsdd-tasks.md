@@ -2,8 +2,6 @@
 description: Generate and refine the "Tasks" section of an LSDD spec file
 ---
 
-Now, your phase is `lsdd-tasks`, your phase is `lsdd-tasks`
-
 ## Input
 Spec file: $1  
 User intent: $2

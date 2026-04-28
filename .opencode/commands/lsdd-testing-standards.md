@@ -2,8 +2,6 @@
 description: Define and refine the "Testing Standards" section of an LSDD spec file
 ---
 
-Now, your phase is `lsdd-testing-standards`, your phase is `lsdd-testing-standards`
-
 ## Input
 Spec file: $1  
 User intent: $2
